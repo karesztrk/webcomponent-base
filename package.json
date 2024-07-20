@@ -1,0 +1,21 @@
+{
+  "name": "@karesztrk/webcomponent-base",
+  "repository": "https://github.com/karesztrk/webcomponent-base",
+  "version": "1.0.2",
+  "description": "",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "files": [
+    "src",
+    "index.ts"
+  ],
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
+  }
+}
