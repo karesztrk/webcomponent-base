@@ -1,7 +1,7 @@
 {
   "name": "@karesztrk/webcomponent-base",
   "repository": "https://github.com/karesztrk/webcomponent-base",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "type": "module",
   "exports": {
