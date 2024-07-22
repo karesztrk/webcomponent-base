@@ -3,22 +3,37 @@
  * *Inspired by: Hawk Ticehurst*
  * @see https://hawkticehurst.com/writing/bring-your-own-base-class/
  */
-abstract class ShadowElement extends HTMLElement {
-  static register(tagName: string, ctor: new () => HTMLElement) {
+class ShadowElement extends HTMLElement {
+  /**
+   * @param {string} tagName
+   * @param {new () => HTMLElement} ctor
+   * @returns {void}
+   */
+  static register(tagName, ctor) {
     customElements.define(tagName, ctor);
   }
 
-  #shadow: ShadowRoot;
+  /** @type {ShadowRoot} */
+  #shadow;
 
   constructor() {
     super();
     this.#shadow = this.attachShadow({ mode: "open" });
   }
 
+  /** @type {string | undefined} */
+  styles;
+
+  /**
+   * @returns {void}
+   */
   connectedCallback() {
     this._render();
   }
 
+  /**
+   * @returns {void}
+   */
   _render() {
     if (!this.render) {
       throw new Error(
@@ -42,13 +57,20 @@ abstract class ShadowElement extends HTMLElement {
     this.shadow.appendChild(template.content.cloneNode(true));
   }
 
-  abstract render(): string;
-
-  protected get shadow() {
-    return this.#shadow;
+  /**
+   * Manipulate the Shadow DOM.
+   * @returns {string}
+   */
+  render() {
+    return "";
   }
 
-  abstract styles?: string;
+  /**
+   * @returns {ShadowRoot}
+   */
+  get shadow() {
+    return this.#shadow;
+  }
 }
 
 export default ShadowElement;
