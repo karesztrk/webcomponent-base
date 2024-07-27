@@ -1,6 +1,6 @@
 {
   "name": "@karesztrk/webcomponent-base",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "exports": {
     ".": "./src/index.js"
   }

@@ -21,6 +21,11 @@ declare module '@karesztrk/webcomponent-base' {
 		getTemplate(id: string): Node | undefined;
 		
 		isOwnProperty(name: unknown): boolean;
+		/**
+		 * Given a selector, if the target element exists, it will be replace its children with the template instance.
+		 * If the target element doesn't exist, the template will be appended as a new child.
+		 * */
+		addTemplate(selector: string, template: HTMLElement): void;
 	}
 	export default ShadowElement;
 	/**

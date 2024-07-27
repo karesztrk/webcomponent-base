@@ -73,6 +73,22 @@ class LightElement extends HTMLElement {
     const names = Object.getOwnPropertyNames(o);
     return names.includes(/** @type {string} */ (name));
   }
+
+  /**
+   * Given a selector, if the target element exists, it will be replace its children with the template instance.
+   * If the target element doesn't exist, the template will be appended as a new child.
+   * @param {string} selector
+   * @param {HTMLElement} template
+   * @returns {void}
+   */
+  addTemplate(selector, template) {
+    const target = this.querySelector(selector);
+    if (target) {
+      target.replaceChildren(...template.children);
+    } else {
+      this.appendChild(template);
+    }
+  }
 }
 
 export default LightElement;

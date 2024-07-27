@@ -1,7 +1,7 @@
 {
   "name": "@karesztrk/webcomponent-base",
   "repository": "https://github.com/karesztrk/webcomponent-base",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "",
   "type": "module",
   "types": "./types/index.d.ts",
